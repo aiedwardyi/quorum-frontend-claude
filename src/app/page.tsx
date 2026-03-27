@@ -85,49 +85,51 @@ const t = {
 // ---------------------------------------------------------------------------
 
 function ProviderIcon({ id, size = 20 }: { id: Provider; size?: number }) {
-  const shared = {
-    width: size,
-    height: size,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg",
-  }
+  const s = size
 
   switch (id) {
+    // Google Gemini — sparkle/star
     case "gemini":
       return (
-        <svg {...shared}>
+        <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
-            d="M12 2C12 2 17 7 17 12C17 17 12 22 12 22C12 22 7 17 7 12C7 7 12 2 12 2Z"
+            d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.373 12 12 0-6.627 5.373-12 12-12-6.627 0-12-5.373-12-12Z"
             fill="currentColor"
-            opacity="0.9"
-          />
-          <path
-            d="M2 12C2 12 7 7 12 7C17 7 22 12 22 12C22 12 17 17 12 17C7 17 2 12 2 12Z"
-            fill="currentColor"
-            opacity="0.4"
           />
         </svg>
       )
+    // Anthropic Claude — sunburst
     case "claude":
       return (
-        <svg {...shared}>
-          <circle cx="12" cy="12" r="8" fill="currentColor" opacity="0.85" />
-          <circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.3" />
+        <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.31 3.414 9.06 20.586h-2.37L12.94 3.414h2.37Z" fill="currentColor" />
+          <path d="M17.31 3.414 24 20.586h-2.37L15.27 3.414h2.04Z" fill="currentColor" />
+          <path d="M6.69 3.414h2.04L2.37 20.586H0l6.69-17.172Z" fill="currentColor" />
         </svg>
       )
+    // OpenAI GPT — hexagonal flower
     case "gpt":
       return (
-        <svg {...shared}>
-          <rect x="4" y="4" width="16" height="16" rx="4" fill="currentColor" opacity="0.8" />
-          <rect x="8" y="8" width="8" height="8" rx="2" fill="currentColor" opacity="0.25" />
+        <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.98 4.413a6.04 6.04 0 0 0-4.03 2.92 6.043 6.043 0 0 0 .742 7.093 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.516 2.9 5.985 5.985 0 0 0 4.497 2.013 6.052 6.052 0 0 0 5.78-4.153 6.02 6.02 0 0 0 4.028-2.92 6.044 6.044 0 0 0-.74-7.356ZM14.217 21.3a4.505 4.505 0 0 1-2.895-1.053l.144-.08 4.81-2.778a.783.783 0 0 0 .395-.678v-6.789l2.033 1.174a.072.072 0 0 1 .039.055v5.614a4.524 4.524 0 0 1-4.526 4.535Zm-9.722-4.157a4.488 4.488 0 0 1-.54-3.032l.144.086 4.81 2.778a.782.782 0 0 0 .787 0l5.874-3.392v2.346a.073.073 0 0 1-.029.062l-4.866 2.81a4.524 4.524 0 0 1-6.18-1.658ZM3.076 7.922a4.502 4.502 0 0 1 2.355-1.98V11.6a.78.78 0 0 0 .392.676l5.874 3.39-2.033 1.174a.073.073 0 0 1-.069.006l-4.866-2.812A4.525 4.525 0 0 1 3.076 7.92Zm16.688 3.882-5.874-3.393 2.033-1.174a.073.073 0 0 1 .069-.006l4.865 2.811a4.517 4.517 0 0 1-.7 8.142V12.48a.78.78 0 0 0-.393-.677Zm2.024-3.041-.144-.087-4.81-2.779a.782.782 0 0 0-.787 0L10.173 9.29V6.944a.073.073 0 0 1 .029-.061l4.866-2.808a4.523 4.523 0 0 1 6.72 4.688Zm-12.72 4.184-2.034-1.175a.072.072 0 0 1-.039-.054V6.103a4.522 4.522 0 0 1 7.42-3.48l-.144.081-4.81 2.778a.783.783 0 0 0-.395.678l-.002 6.788Zm1.105-2.384 2.616-1.51 2.616 1.51v3.018l-2.616 1.51-2.616-1.51v-3.018Z"
+            fill="currentColor"
+          />
         </svg>
       )
+    // Perplexity — stylized P / abstract mark
     case "perplexity":
       return (
-        <svg {...shared}>
-          <polygon points="12,3 21,18 3,18" fill="currentColor" opacity="0.8" />
-          <polygon points="12,9 17,18 7,18" fill="currentColor" opacity="0.25" />
+        <svg width={s} height={s} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 1.5 4.5 6.75v10.5L12 22.5l7.5-5.25V6.75L12 1.5Zm0 2.1 5.4 3.78V12L12 15.78 6.6 12V7.38L12 3.6Z"
+            fill="currentColor"
+          />
+          <path d="M12 1.5v4.08M4.5 6.75l2.1 1.47M19.5 6.75l-2.1 1.47M12 15.78V22.5M4.5 17.25l2.1-1.47M19.5 17.25l-2.1-1.47"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
         </svg>
       )
   }
@@ -167,7 +169,7 @@ export default function Home() {
     const el = textareaRef.current
     if (!el) return
     el.style.height = "auto"
-    el.style.height = Math.max(el.scrollHeight, 140) + "px"
+    el.style.height = Math.max(el.scrollHeight, 120) + "px"
   }, [])
 
   useEffect(() => {
@@ -300,8 +302,8 @@ export default function Home() {
       </header>
 
       {/* ---- Main content ---- */}
-      <div className="relative z-10 flex flex-1 items-start justify-center px-6 pt-12 pb-20 sm:px-8 sm:pt-16 lg:pt-20">
-        <div className="w-full max-w-[680px] flex flex-col gap-10">
+      <div className="relative z-10 flex flex-1 items-start justify-center px-6 pt-8 pb-16 sm:px-8 sm:pt-10 lg:pt-12">
+        <div className="w-full max-w-[680px] flex flex-col gap-8">
 
           {/* ---- Prompt card ---- */}
           <div
@@ -311,7 +313,7 @@ export default function Home() {
               p-6 sm:p-8
               shadow-[0_24px_80px_-20px_rgba(0,0,0,0.06)]
               backdrop-blur-sm
-              dark:border-zinc-800/80 dark:bg-zinc-950/60
+              dark:border-zinc-700/50 dark:bg-zinc-900/80
               dark:shadow-[0_24px_80px_-20px_rgba(0,0,0,0.5)]
               transition-shadow duration-500
             "
@@ -333,8 +335,8 @@ export default function Home() {
               "
               style={{
                 fontFamily: "var(--font-geist-sans)",
-                minHeight: "140px",
-                maxHeight: "320px",
+                minHeight: "120px",
+                maxHeight: "280px",
               }}
             />
 
@@ -386,7 +388,7 @@ export default function Home() {
                       ${
                         active
                           ? "border-transparent shadow-md"
-                          : "border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm"
+                          : "border-zinc-200 dark:border-zinc-700/50 bg-white/60 dark:bg-zinc-900/50 hover:border-zinc-300 dark:hover:border-zinc-600 hover:shadow-sm"
                       }
                     `}
                     style={
@@ -472,7 +474,7 @@ export default function Home() {
               <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 px-1">
                 {l.responseLength}
               </span>
-              <div className="grid grid-cols-3 gap-1.5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 p-1.5">
+              <div className="grid grid-cols-3 gap-1.5 rounded-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white/60 dark:bg-zinc-900/50 p-1.5">
                 {RESPONSE_LENGTHS.map((rl) => {
                   const active = responseLength === rl.value
                   return (
@@ -509,7 +511,7 @@ export default function Home() {
               <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 px-1">
                 {l.rounds}
               </span>
-              <div className="grid grid-cols-3 gap-1.5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-950/40 p-1.5">
+              <div className="grid grid-cols-3 gap-1.5 rounded-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white/60 dark:bg-zinc-900/50 p-1.5">
                 {ROUND_OPTIONS.map((ro) => {
                   const active = rounds === ro.value
                   const desc = ROUND_DESCRIPTIONS[ro.value]
@@ -552,13 +554,13 @@ export default function Home() {
               className={`
                 w-full h-13 rounded-2xl text-[14px] font-medium tracking-wide
                 bg-zinc-900 text-white hover:bg-zinc-800
-                dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white
-                disabled:opacity-25 disabled:cursor-not-allowed
+                dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-white
+                disabled:opacity-35 disabled:cursor-not-allowed
                 transition-all duration-250 cursor-pointer
                 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.15)]
                 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.2)]
-                dark:shadow-[0_2px_12px_-3px_rgba(255,255,255,0.08)]
-                dark:hover:shadow-[0_4px_20px_-4px_rgba(255,255,255,0.12)]
+                dark:shadow-[0_2px_16px_-4px_rgba(255,255,255,0.1)]
+                dark:hover:shadow-[0_4px_24px_-4px_rgba(255,255,255,0.15)]
                 active:scale-[0.995]
               `}
             >
